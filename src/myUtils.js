@@ -1,5 +1,7 @@
 const api = {
-    intersection: () => {}
+    gaup: () => {
+        return fetch('/gaup').then((res) => res.json())
+    }
 }
 
 export { api }

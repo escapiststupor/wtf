@@ -5,6 +5,7 @@ import { Provider } from 'react-redux'
 // Import your own reducer
 import { middlewares } from './index'
 import reducer from './reducer'
+import { server } from './mocks/server'
 
 function render(
   ui,
@@ -19,6 +20,23 @@ function render(
   }
   return rtlRender(ui, { wrapper: Wrapper, ...renderOptions })
 }
+
+
+
+beforeAll(() => {
+  // Enable the mocking in tests.
+  server.listen()
+})
+
+afterEach(() => {
+  // Reset any runtime handlers tests may use.
+  server.resetHandlers()
+})
+
+afterAll(() => {
+  // Clean up once the tests are done.
+  server.close()
+})
 
 // re-export everything
 export * from '@testing-library/react'

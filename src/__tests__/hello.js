@@ -1,10 +1,10 @@
 import "@testing-library/jest-dom/extend-expect";
 import React from "react";
 import { fireEvent, render } from "@testing-library/react";
-import Hello, { rrr } from "../hello";
+import Hello, { gwfau } from "../hello";
 import { api } from "../myUtils";
 
-const { intersection } = api
+const { gaup } = api
 
 jest.mock("../myUtils", () => {
   const myUtils = jest.requireActual("../myUtils");
@@ -12,7 +12,7 @@ jest.mock("../myUtils", () => {
     ...myUtils,
     api: {
       ...myUtils.api,
-      intersection: jest.fn()
+      gaup: jest.fn()
     }
   };
 });
@@ -22,8 +22,8 @@ beforeEach(() => {
   jest.clearAllMocks()
 })
 
-test("React Testing Library works!", () => {
-  const { getByRole } = render(<Hello />);
-  fireEvent.click(getByRole("button"));
-  expect(intersection).toHaveBeenCalled();
+test("React Testing Library works!", async () => {
+  gaup.mockResolvedValue(123)
+  await gwfau()
+  expect(gaup).toHaveBeenCalledWith(123);
 });

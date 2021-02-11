@@ -1,12 +1,15 @@
 import React from "react";
 import { api } from "./myUtils";
 
-const { intersection } = api
+const { gaup } = api
 
-export function rrr() {}
+export async function gwfau() {
+  const r = await gaup(123)
+  return r
+}
 
 export default () => (
   <div>
-    <button onClick={() => intersection([], [])}>fuck</button>
+    <button onClick={gwfau}>fuck</button>
   </div>
 );

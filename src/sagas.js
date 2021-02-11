@@ -1,2 +1,2 @@
 import { api } from "./myUtils";
-import { rrr } from './hello'
+import { gwfau } from './hello'
